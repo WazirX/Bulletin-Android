@@ -6,6 +6,17 @@ fun String?.isEmpty(): Boolean {
     return this == null || "" == trim()
 }
 
+fun String?.capitalized(): String? {
+    if (this.isNullOrBlank()) {
+        return this
+    }
+
+    return this.trim().split("\\s+".toRegex())
+        .joinToString(" ") {    it.replaceFirstChar { // it: Char
+            it.uppercase()
+        } }
+}
+
 fun String?.toCamelCaseSingleWord(): String {
     if (this == null) return ""
 

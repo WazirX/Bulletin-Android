@@ -1,6 +1,6 @@
 package com.bulletin.utilities
 
-import com.bulletin.BulletinApp
+import com.bulletin.extension.lastSeenVersion
 
 
 object AppUpdatedChecker {
@@ -18,7 +18,7 @@ object AppUpdatedChecker {
 
         // Fetch Last Known App Version from User Defaults
         val lastKnownAppVersion: String? =
-            AppStorageHelper.lastAppVersion // get(LAST_KNOWN_APP_VERSION_KEY);
+            AppStorageHelper.shared.lastSeenVersion?.version // get(LAST_KNOWN_APP_VERSION_KEY);
 
         // Fetch Current App Version
         val currentAppVersion: String? = VersionUtil.getApplicationVersion()

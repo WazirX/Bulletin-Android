@@ -23,7 +23,7 @@ class BulletinApp : Application() {
     //Initializer
     init {
         shared = this
-        gsonInstance = GsonHelper.getGsonInstance()
+        gsonInstance = GsonHelper.gsonInstance
     }
 
 }

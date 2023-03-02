@@ -1,5 +1,6 @@
 package com.bulletin
 
+import com.bulletin.extension.lastSeenVersion
 import com.bulletin.models.BulletinVersion
 import com.bulletin.utilities.AppStorageHelper
 
@@ -16,8 +17,8 @@ class BulletinSdk {
     }
 
     fun showUnseenBulletin(limit: Int? = null): Boolean {
-        val lastseenVersion = AppStorageHelper.lastAppVersion
-        val items = BulletinDataStore.getData(null, "1.2", limit)
+        val lastseenVersion = AppStorageHelper.shared.lastSeenVersion ?: return false
+        val items = BulletinDataStore.getData(lastseenVersion, null, limit)
         return showBulletin(items)
     }
 
