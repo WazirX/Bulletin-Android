@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <attr name="main_text_primary" format="reference|color" />
+    <attr name="main_text_secondary" format="reference|color" />
+    <attr name="main_text_tertiary" format="reference|color" />
+
+    <attr name="main_brand_primary" format="reference|color" />
+
+    <attr name="main_navigation_onNavigation" format="reference|color" />
+    <attr name="main_navigation_bg" format="reference|color" />
+
+    <attr name="main_bg_surface" format="reference|color" />
+    <attr name="main_bg_surface_alt" format="reference|color" />
+    <attr name="main_bg_primary" format="reference|color" />
+    <attr name="main_bg_secondary" format="reference|color" />
+    <attr name="main_bg_tertiary" format="reference|color" />
+
+    <attr name="brand_text_secondary" format="reference|color" />
+    <attr name="brand_text_primary" format="reference|color" />
+    <attr name="brand_text_onMuted" format="reference|color" />
+    <attr name="brand_text_onPrimary" format="reference|color" />
+
+    <attr name="brand_bg_primary" format="reference|color" />
+    <attr name="brand_bg_muted" format="reference|color" />
+    <attr name="brand_bg_muted_border" format="reference|color" />
+
+    <attr name="success_text_primary" format="reference|color" />
+    <attr name="success_text_onMuted" format="reference|color" />
+    <attr name="success_text_onPrimary" format="reference|color" />
+
+    <attr name="success_bg_primary" format="reference|color" />
+    <attr name="success_bg_muted" format="reference|color" />
+    <attr name="success_bg_muted_border" format="reference|color" />
+
+    <attr name="danger_text_primary" format="reference|color" />
+    <attr name="danger_text_onMuted" format="reference|color" />
+    <attr name="danger_text_onPrimary" format="reference|color" />
+
+    <attr name="danger_bg_primary" format="reference|color" />
+    <attr name="danger_bg_muted" format="reference|color" />
+    <attr name="danger_bg_muted_border" format="reference|color" />
+
+    <attr name="warning_text_onMuted" format="reference|color" />
+    <attr name="warning_text_primary" format="reference|color" />
+    <attr name="warning_text_onPrimary" format="reference|color" />
+
+    <attr name="warning_bg_muted" format="reference|color" />
+    <attr name="warning_bg_primary" format="reference|color" />
+    <attr name="warning_bg_muted_border" format="reference|color" />
+
+    <attr name="brand_alt_text_secondary" format="reference|color" />
+    <attr name="brand_alt_text_primary" format="reference|color" />
+    <attr name="brand_alt_text_onMuted" format="reference|color" />
+    <attr name="brand_alt_text_onPrimary" format="reference|color" />
+
+    <attr name="brand_alt_bg_primary" format="reference|color" />
+    <attr name="brand_alt_bg_muted" format="reference|color" />
+    <attr name="brand_alt_bg_disabled" format="reference|color" />
+
+    <attr name="attention_text_onMuted" format="reference|color" />
+    <attr name="attention_text_primary" format="reference|color" />
+    <attr name="attention_text_onPrimary" format="reference|color" />
+
+    <attr name="attention_bg_muted" format="reference|color" />
+    <attr name="attention_bg_muted_border" format="reference|color" />
+    <attr name="attention_bg_primary" format="reference|color" />
+
+    <attr name="misc_home_bar" format="reference|color" />
+
+</resources>
