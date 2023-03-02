@@ -1,0 +1,219 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+
+    <style name="heading_1_bold">
+        <item name="android:fontFamily">@font/ibm_plex_sans_bold</item>
+        <item name="android:textSize">48sp</item>
+    </style>
+
+    <style name="heading_1_semi_bold">
+        <item name="android:fontFamily">@font/ibm_plex_sans_semi_bold</item>
+        <item name="android:textSize">48sp</item>
+    </style>
+
+    <style name="heading_1_medium">
+        <item name="android:fontFamily">@font/ibm_plex_sans_medium</item>
+        <item name="android:textSize">48sp</item>
+    </style>
+
+    <style name="heading_1_regular">
+        <item name="android:fontFamily">@font/ibm_plex_sans_regular</item>
+        <item name="android:textSize">48sp</item>
+    </style>
+
+
+    <!--Heading 2-->
+    <style name="heading_2_bold">
+        <item name="android:fontFamily">@font/ibm_plex_sans_bold</item>
+        <item name="android:textSize">32sp</item>
+    </style>
+
+    <style name="heading_2_semi_bold">
+        <item name="android:fontFamily">@font/ibm_plex_sans_semi_bold</item>
+        <item name="android:textSize">32sp</item>
+    </style>
+
+    <style name="heading_2_medium">
+        <item name="android:fontFamily">@font/ibm_plex_sans_medium</item>
+        <item name="android:textSize">32sp</item>
+    </style>
+
+    <style name="heading_2_regular">
+        <item name="android:fontFamily">@font/ibm_plex_sans_regular</item>
+        <item name="android:textSize">32sp</item>
+    </style>
+
+    <!--Heading 3-->
+    <style name="heading_3_bold">
+        <item name="android:fontFamily">@font/ibm_plex_sans_bold</item>
+        <item name="android:textSize">25sp</item>
+    </style>
+
+    <style name="heading_3_semi_bold">
+        <item name="android:fontFamily">@font/ibm_plex_sans_semi_bold</item>
+        <item name="android:textSize">25sp</item>
+    </style>
+
+    <style name="heading_3_medium">
+        <item name="android:fontFamily">@font/ibm_plex_sans_medium</item>
+        <item name="android:textSize">25sp</item>
+    </style>
+
+    <style name="heading_3_regular">
+        <item name="android:fontFamily">@font/ibm_plex_sans_regular</item>
+        <item name="android:textSize">25sp</item>
+    </style>
+
+    <!--Heading 4-->
+    <style name="heading_4_bold">
+        <item name="android:fontFamily">@font/ibm_plex_sans_bold</item>
+        <item name="android:textSize">22sp</item>
+    </style>
+
+    <style name="heading_4_semi_bold">
+        <item name="android:fontFamily">@font/ibm_plex_sans_semi_bold</item>
+        <item name="android:textSize">22sp</item>
+    </style>
+
+    <style name="heading_4_medium">
+        <item name="android:fontFamily">@font/ibm_plex_sans_medium</item>
+        <item name="android:textSize">22sp</item>
+    </style>
+
+    <style name="heading_4_regular">
+        <item name="android:fontFamily">@font/ibm_plex_sans_regular</item>
+        <item name="android:textSize">22sp</item>
+    </style>
+
+    <!--Heading 5-->
+    <style name="heading_5_bold">
+        <item name="android:fontFamily">@font/ibm_plex_sans_bold</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="heading_5_semi_bold">
+        <item name="android:fontFamily">@font/ibm_plex_sans_semi_bold</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="heading_5_medium">
+        <item name="android:fontFamily">@font/ibm_plex_sans_medium</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="heading_5_regular">
+        <item name="android:fontFamily">@font/ibm_plex_sans_regular</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <!--Heading 6-->
+    <style name="heading_6_bold">
+        <item name="android:fontFamily">@font/ibm_plex_sans_bold</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="heading_6_semi_bold">
+        <item name="android:fontFamily">@font/ibm_plex_sans_semi_bold</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="heading_6_medium">
+        <item name="android:fontFamily">@font/ibm_plex_sans_medium</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="heading_6_regular">
+        <item name="android:fontFamily">@font/ibm_plex_sans_regular</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <!--Large-->
+    <style name="large_bold">
+        <item name="android:fontFamily">@font/ibm_plex_sans_bold</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="large_semi_bold">
+        <item name="android:fontFamily">@font/ibm_plex_sans_semi_bold</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="large_medium">
+        <item name="android:fontFamily">@font/ibm_plex_sans_medium</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="large_regular">
+        <item name="android:fontFamily">@font/ibm_plex_sans_regular</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <!--Base-->
+    <style name="base_bold">
+        <item name="android:fontFamily">@font/ibm_plex_sans_bold</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="base_semi_bold">
+        <item name="android:fontFamily">@font/ibm_plex_sans_semi_bold</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="base_medium">
+        <item name="android:fontFamily">@font/ibm_plex_sans_medium</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="base_regular">
+        <item name="android:fontFamily">@font/ibm_plex_sans_regular</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <!--Small-->
+    <style name="small_bold">
+        <item name="android:fontFamily">@font/ibm_plex_sans_bold</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="small_semi_bold">
+        <item name="android:fontFamily">@font/ibm_plex_sans_semi_bold</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="small_medium">
+        <item name="android:fontFamily">@font/ibm_plex_sans_medium</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="small_regular">
+        <item name="android:fontFamily">@font/ibm_plex_sans_regular</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <!--X-Small-->
+    <style name="xsmall_bold">
+        <item name="android:fontFamily">@font/ibm_plex_sans_bold</item>
+        <item name="android:textSize">11sp</item>
+    </style>
+
+    <style name="xsmall_semi_bold">
+        <item name="android:fontFamily">@font/ibm_plex_sans_semi_bold</item>
+        <item name="android:textSize">11sp</item>
+    </style>
+
+    <style name="xsmall_medium">
+        <item name="android:fontFamily">@font/ibm_plex_sans_medium</item>
+        <item name="android:textSize">11sp</item>
+    </style>
+
+    <style name="xsmall_regular">
+        <item name="android:fontFamily">@font/ibm_plex_sans_regular</item>
+        <item name="android:textSize">11sp</item>
+    </style>
+
+</resources>
