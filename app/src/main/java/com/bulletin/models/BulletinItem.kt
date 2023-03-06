@@ -5,7 +5,6 @@ import com.wrx.wazirx.views.bulletin.model.Media
 
 abstract class BulletinItem()  {
     companion object {
-        @JvmStatic
         val runtimeTypeAdapterFactory: RuntimeTypeAdapterFactory<*>
             get() {
                 val mediaRuntimeTypeAdapterFactory = RuntimeTypeAdapterFactory.of(
