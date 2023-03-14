@@ -1,55 +1,77 @@
-//package com.app.BitRabbit.Classes.Components.FormCollection.Views
-//
-//import android.view.View
-//import com.bulletin.models.Title
-//
-//
-//class FormSectionTitleViewHolder(val viewBinding : LayoutFormSectionAppInfoBinding, listener : FormRecyclerViewAdapter.OnItemClickListener) :
-//    BaseViewHolder<Title>(viewBinding,listener) {
-//
-//    // region Methods
-//     override fun bind(item: Title) {
-//        super.bind(item)
-//
-//        itemView.setOnClickListener {
-//
-//        }
-//
-//        // Set App Title
-//        if (!item.appName.isNullOrBlank()) {
-//            viewBinding.appNameLabel.text = item.appName
-//            viewBinding.appNameLabel.setVisibility(View.VISIBLE)
-//        } else {
-//            viewBinding.appNameLabel.text = ""
-//            viewBinding.appNameLabel.setVisibility(View.GONE)
-//        }
-//
-//        // Set App Version
-//        if (!item.appVersion.isNullOrBlank()) {
-//            viewBinding.appVersionLabel.text = item.appVersion
-//            viewBinding.appVersionLabel.setVisibility(View.VISIBLE)
-//        } else {
-//            viewBinding.appVersionLabel.text = ""
-//            viewBinding.appVersionLabel.setVisibility(View.GONE)
-//        }
-//
-//    }
-//
-//    override fun getBackgroundView(): View? {
-//        return null
-//    }
-//
-//    override fun updateAppearance() {
-//        super.updateAppearance()
-//
-//        // Set Default Properties
-//        viewBinding.appNameLabel.typeface = AppStyle.Font.Bold()
-//        viewBinding.appNameLabel.setTextColor(ThemeUtils.getAttributedColor(R.attr.text_2, viewBinding.appNameLabel.context))
-//
-//        viewBinding.appVersionLabel.typeface = AppStyle.Font.DemiBold()
-//        viewBinding.appVersionLabel.setTextColor(ThemeUtils.getAttributedColor(R.attr.text_2, viewBinding.appVersionLabel.context))
-//
-//    }
-//    // endregion
-//
-//}
+package com.bulletin.viewHolder
+
+import android.os.Build
+import android.view.View
+import com.app.BitRabbit.Classes.Components.FormCollection.FormRecyclerViewAdapter
+import com.bulletin.models.Title
+import com.bulletin.utilities.ThemeUtils
+import com.example.bulletin.R
+import com.example.bulletin.databinding.LayoutFormSectionTitleBinding
+
+
+class FormSectionTitleViewHolder(val viewBinding : LayoutFormSectionTitleBinding, listener : FormRecyclerViewAdapter.OnItemClickListener) :
+    BaseViewHolder<Title>(viewBinding,listener) {
+
+    // region Methods
+     override fun bind(item: Title) {
+        super.bind(item)
+
+        itemView.setOnClickListener {
+
+        }
+
+        // Set App Title
+        if (!item.preTitleText.isNullOrBlank()) {
+            viewBinding.preTitleLabel.text = item.preTitleText
+            viewBinding.preTitleLabel.setVisibility(View.VISIBLE)
+        } else {
+            viewBinding.preTitleLabel.text = ""
+            viewBinding.preTitleLabel.setVisibility(View.GONE)
+        }
+
+        // Set App Version
+        if (!item.titleText.isNullOrBlank()) {
+            viewBinding.titleLabel.text = item.titleText
+            viewBinding.titleLabel.setVisibility(View.VISIBLE)
+        } else {
+            viewBinding.titleLabel.text = ""
+            viewBinding.titleLabel.setVisibility(View.GONE)
+        }
+
+        // Set App Version
+        if (!item.subTitleText.isNullOrBlank()) {
+            viewBinding.subtitleLabel.text = item.subTitleText
+            viewBinding.subtitleLabel.setVisibility(View.VISIBLE)
+        } else {
+            viewBinding.subtitleLabel.text = ""
+            viewBinding.subtitleLabel.setVisibility(View.GONE)
+        }
+
+    }
+
+    override fun getBackgroundView(): View? {
+        return null
+    }
+
+    override fun updateAppearance() {
+        super.updateAppearance()
+
+        // Set Default Properties
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            viewBinding.preTitleLabel.setTextAppearance(R.style.base_semi_bold)
+            viewBinding.titleLabel.setTextAppearance(R.style.base_semi_bold)
+            viewBinding.subtitleLabel.setTextAppearance(R.style.base_semi_bold)
+        } else {
+            viewBinding.preTitleLabel.setTextAppearance(viewBinding.preTitleLabel.context, R.style.large_bold)
+            viewBinding.titleLabel.setTextAppearance(viewBinding.titleLabel.context, R.style.large_bold)
+            viewBinding.subtitleLabel.setTextAppearance(viewBinding.subtitleLabel.context, R.style.large_bold)
+        }
+
+        viewBinding.preTitleLabel.setTextColor(ThemeUtils.getAttributedColor(R.attr.brand_text_primary, viewBinding.preTitleLabel.context))
+        viewBinding.titleLabel.setTextColor(ThemeUtils.getAttributedColor(R.attr.brand_text_primary, viewBinding.titleLabel.context))
+        viewBinding.subtitleLabel.setTextColor(ThemeUtils.getAttributedColor(R.attr.brand_text_primary, viewBinding.subtitleLabel.context))
+
+    }
+    // endregion
+
+}

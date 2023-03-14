@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
 }
 
 android {
@@ -60,6 +61,9 @@ dependencies {
     androidTestImplementation "androidx.test.espresso:espresso-core:$espressoCore"
 
     implementation "com.squareup.retrofit2:converter-gson:$retrofit"
+
+    implementation 'com.github.bumptech.glide:glide:4.13.2'
+    kapt 'com.github.bumptech.glide:compiler:4.13.2'
 
 
 }

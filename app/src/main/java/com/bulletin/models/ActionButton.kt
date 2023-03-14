@@ -11,7 +11,7 @@ data class ActionButton(val title: String?, var clickPayload: Any?) : BulletinIt
 
     // region Init Methods
     init {
-
+        type = ItemType.ACTION_BUTTON
     }
 
     companion object {

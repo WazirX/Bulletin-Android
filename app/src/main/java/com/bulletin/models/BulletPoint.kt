@@ -15,6 +15,11 @@ import com.google.gson.annotations.SerializedName
 
 data class BulletPoint(var bullet: Bullet?, var titleText: String?, var subTitleText: String?) : BulletinItem() {
 
+    // region Init Methods
+    init {
+        type = ItemType.BULLET_POINT
+    }
+
     companion object {
 
         @Suppress("UNCHECKED_CAST")

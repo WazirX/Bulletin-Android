@@ -18,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/version_title"
+            android:id="@+id/pre_title_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="18sp"
@@ -36,7 +36,7 @@
             android:textColor="?attr/success_text_primary"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/version_title"
+            app:layout_constraintTop_toBottomOf="@+id/pre_title_label"
             tools:text="Daxesh Nagar Daxesh Nagar" />
 
         <TextView

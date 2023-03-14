@@ -8,6 +8,11 @@ import com.bulletin.extension.validVersion
 
 data class Title(val preTitleText: String?, val titleText: String?, val subTitleText: String?) : BulletinItem() {
 
+    // region Init Methods
+    init {
+        type = ItemType.TITLE
+    }
+
     companion object {
 
         fun init(attributes: Map<String, Any>): Title? {

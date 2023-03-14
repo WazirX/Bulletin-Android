@@ -4,6 +4,20 @@ import com.bulletin.utilities.RuntimeTypeAdapterFactory
 import com.wrx.wazirx.views.bulletin.model.Media
 
 abstract class BulletinItem()  {
+
+    // MARK: - Declarations
+    enum class ItemType(val value: String) {
+        UNDEFINED("Undefined"),
+        TITLE("title"),
+        MESSAGE("message"),
+        MEDIA("media"),
+        BULLET_POINT("bulletPoint"),
+        ACTION_BUTTON("actionButton"),
+    }
+
+    // MARK: - Variables
+     var type: ItemType = ItemType.UNDEFINED
+
     companion object {
         val runtimeTypeAdapterFactory: RuntimeTypeAdapterFactory<*>
             get() {

@@ -8,6 +8,8 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
+    <color name="transparent">#00000000</color>
+
     ------------------ New Color ------------------------
     <color name="colors_black">#000000</color>
     <color name="colors_white">#ffffff</color>

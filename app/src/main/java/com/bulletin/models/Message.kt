@@ -21,6 +21,11 @@ data class Message(var messageType: MessageType = MessageType.TEXT, val text: St
         TEXT("text");
     }
 
+    // region Init Methods
+    init {
+        type = ItemType.MESSAGE
+    }
+
     companion object {
         fun init(attributes: Map<String, Any>): Message? {
 
@@ -35,7 +40,6 @@ data class Message(var messageType: MessageType = MessageType.TEXT, val text: St
 
             // Set Text
             val text = (attributes["text"] as? String) ?: return null
-
 
             return Message(messageType, text)
         }
