@@ -48,6 +48,9 @@ data class Bullet(val bulletType: BulletType?, val unicode: String?, val imageUr
         IMAGE;
     }
 
+    // region Init Methods
+
+
     companion object {
 
         fun init(attributes: Map<String, Any>?): Bullet? {

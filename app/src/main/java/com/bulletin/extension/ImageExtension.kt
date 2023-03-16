@@ -1,4 +1,4 @@
-package com.app.BitRabbit.Core.Extensions
+package com.bulletin.extension
 
 import android.content.Context
 import android.graphics.Bitmap

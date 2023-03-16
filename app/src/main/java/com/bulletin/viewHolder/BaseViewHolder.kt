@@ -3,7 +3,7 @@ package com.bulletin.viewHolder
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewbinding.ViewBinding
-import com.app.BitRabbit.Classes.Components.FormCollection.FormRecyclerViewAdapter
+import com.bulletin.FormRecyclerViewAdapter
 import com.bulletin.models.BulletinItem
 
 

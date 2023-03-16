@@ -2,9 +2,9 @@ package com.bulletin.viewHolder
 
 import android.os.Build
 import android.view.View
-import com.app.BitRabbit.Classes.Components.FormCollection.FormRecyclerViewAdapter
-import com.app.BitRabbit.Core.Extensions.DeviceUtil
+import com.bulletin.FormRecyclerViewAdapter
 import com.bulletin.models.ActionButton
+import com.bulletin.utilities.DeviceUtil
 import com.bulletin.utilities.ThemeUtils
 import com.example.bulletin.R
 import com.example.bulletin.databinding.LayoutFormSectionActionButtonBinding

@@ -1,11 +1,10 @@
 package com.bulletin.viewHolder
 
-import android.graphics.Color
 import android.graphics.drawable.BitmapDrawable
 import android.graphics.drawable.Drawable
 import android.view.View
-import com.app.BitRabbit.Classes.Components.FormCollection.FormRecyclerViewAdapter
-import com.app.BitRabbit.Core.Extensions.loadImageWithUrl
+import com.bulletin.FormRecyclerViewAdapter
+import com.bulletin.extension.loadImageWithUrl
 import com.bumptech.glide.request.target.CustomTarget
 import com.bumptech.glide.request.transition.Transition
 import com.example.bulletin.databinding.LayoutFormSectionMediaBinding

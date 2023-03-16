@@ -1,4 +1,4 @@
-package com.app.BitRabbit.Core.Extensions
+package com.bulletin.utilities
 
 import android.content.Context
 import android.util.DisplayMetrics

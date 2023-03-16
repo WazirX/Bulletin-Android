@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Bulletin</string>
+
+    <string name="okay_go_it">OKay, Go it</string>
+    <string name="whats_new_title">What’s new in this update?</string>
+
+
 </resources>

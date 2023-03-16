@@ -1,22 +1,12 @@
 package com.bulletin.viewHolder
 
-import android.graphics.Color
-import android.graphics.PorterDuff
-import android.graphics.drawable.BitmapDrawable
-import android.graphics.drawable.Drawable
 import android.os.Build
-import android.view.LayoutInflater
 import android.view.View
-import androidx.core.content.ContextCompat
-import com.app.BitRabbit.Classes.Components.FormCollection.FormRecyclerViewAdapter
-import com.bulletin.models.BulletinItem
+import com.bulletin.FormRecyclerViewAdapter
 import com.bulletin.models.Message
 import com.bulletin.utilities.ThemeUtils
-import com.bumptech.glide.request.target.CustomTarget
-import com.bumptech.glide.request.transition.Transition
 import com.example.bulletin.R
 import com.example.bulletin.databinding.LayoutFormSectionMessageBinding
-import com.example.bulletin.databinding.LayoutFormSectionTitleBinding
 
 
 class FormSectionMessageViewHolder(val viewBinding : LayoutFormSectionMessageBinding, listener : FormRecyclerViewAdapter.OnItemClickListener) :

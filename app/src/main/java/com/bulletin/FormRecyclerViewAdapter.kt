@@ -1,19 +1,16 @@
-package com.app.BitRabbit.Classes.Components.FormCollection
+package com.bulletin
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.bulletin.models.*
+import com.bulletin.models.BulletinItem
 import com.bulletin.viewHolder.*
 import com.example.bulletin.databinding.*
-import com.wrx.wazirx.views.bulletin.model.Media
 
 
-class FormRecyclerViewAdapter(var formSection: List<BulletinItem>) :
+class FormRecyclerViewAdapter(var formSection: List<BulletinItem>,var listener: OnItemClickListener) :
     RecyclerView.Adapter<BaseViewHolder<BulletinItem>>() {
 
-    // region Variables
-    private lateinit var listener : OnItemClickListener
 
     fun setRecyclerViewItems(formData: List<BulletinItem>) {
         formSection = formData
@@ -72,18 +69,27 @@ class FormRecyclerViewAdapter(var formSection: List<BulletinItem>) :
 
         val item = formSection[position].also { }
 
-        return if (item is Title) {
-            ITEM_VIEW_TYPE_TITLE
-        } else if (item is Message) {
-            ITEM_VIEW_TYPE_MESSAGE
-        } else if (item is Media) {
-            ITEM_VIEW_TYPE_MEDIA
-        } else if (item is BulletPoint) {
-            ITEM_VIEW_TYPE_BULLET_POINT
-        } else if (item is ActionButton) {
-            ITEM_VIEW_TYPE_ACTION_BUTTON
-        } else {
-            ITEM_VIEW_TYPE_TITLE
+//        return if (item is Title) {
+//            ITEM_VIEW_TYPE_TITLE
+//        } else if (item is Message) {
+//            ITEM_VIEW_TYPE_MESSAGE
+//        } else if (item is Media) {
+//            ITEM_VIEW_TYPE_MEDIA
+//        } else if (item is BulletPoint) {
+//            ITEM_VIEW_TYPE_BULLET_POINT
+//        } else if (item is ActionButton) {
+//            ITEM_VIEW_TYPE_ACTION_BUTTON
+//        } else {
+//            ITEM_VIEW_TYPE_TITLE
+//        }
+
+        return when (item.type){
+            BulletinItem.ItemType.UNDEFINED -> ITEM_VIEW_TYPE_TITLE
+            BulletinItem.ItemType.TITLE -> ITEM_VIEW_TYPE_TITLE
+            BulletinItem.ItemType.MESSAGE -> ITEM_VIEW_TYPE_MESSAGE
+            BulletinItem.ItemType.MEDIA -> ITEM_VIEW_TYPE_MEDIA
+            BulletinItem.ItemType.BULLET_POINT -> ITEM_VIEW_TYPE_BULLET_POINT
+            BulletinItem.ItemType.ACTION_BUTTON -> ITEM_VIEW_TYPE_ACTION_BUTTON
         }
     }
     // endregion
@@ -99,15 +105,15 @@ class FormRecyclerViewAdapter(var formSection: List<BulletinItem>) :
     // endregion
 
     // region Methods
-    fun setListener(context : OnItemClickListener){
-        listener = context
-    }
+//    fun setListener(context : OnItemClickListener){
+//        listener = context
+//    }
 
     // endregion
 
     // region Interface Methods
     interface OnItemClickListener {
-      //  fun formDidTriggerEvent(eventType: FormSectionBaseItem.EventType, baseItem : FormSectionBaseItem, index : Int) : Boolean
+        fun formDidTriggerEvent(eventType: BulletinItem.ItemType, baseItem : BulletinItem, index : Int) : Boolean
     }
     // endregion
 }

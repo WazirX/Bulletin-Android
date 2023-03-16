@@ -2,7 +2,7 @@ package com.bulletin.viewHolder
 
 import android.os.Build
 import android.view.View
-import com.app.BitRabbit.Classes.Components.FormCollection.FormRecyclerViewAdapter
+import com.bulletin.FormRecyclerViewAdapter
 import com.bulletin.models.BulletPoint
 import com.bulletin.utilities.ThemeUtils
 import com.example.bulletin.R
