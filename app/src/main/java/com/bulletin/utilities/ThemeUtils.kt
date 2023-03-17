@@ -57,39 +57,4 @@ object ThemeUtils {
         return drawable
     }
 
-    fun applyThemeStateDrawable(view: View, @AttrRes attrs: IntArray, states: Array<IntArray>) {
-        val colors = IntArray(attrs.size)
-        for (i in attrs.indices) {
-            colors[i] = getAttributedColor(attrs[i], view.context)
-        }
-        val drawable = view.background as StateListDrawable
-        DrawableCompat.setTintList(drawable, ColorStateList(states, colors))
-        view.setBackgroundDrawable(drawable)
-    }
-
-    fun getHexStringofAttrs(
-        @AttrRes attr: Int,
-        context: Context
-    ): String {
-        val color = getAttributedColor(attr, context)
-        return String.format("#%06X", 0xFFFFFF and color)
-    }
-
-    fun createGradientDrawable(
-        colorArr: Array<String?>,
-        orientation: GradientDrawable.Orientation?,
-        cornerRadius: Float
-    ): GradientDrawable {
-        val colors = IntArray(colorArr.size)
-        for (i in colorArr.indices) {
-            colors[i] = Color.parseColor(colorArr[i])
-        }
-
-        //create a new gradient color
-        val gd = GradientDrawable(
-            orientation, colors
-        )
-        gd.cornerRadius = cornerRadius
-        return gd
-    }
 }

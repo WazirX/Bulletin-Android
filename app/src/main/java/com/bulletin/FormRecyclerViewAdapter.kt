@@ -113,7 +113,7 @@ class FormRecyclerViewAdapter(var formSection: List<BulletinItem>,var listener: 
 
     // region Interface Methods
     interface OnItemClickListener {
-        fun formDidTriggerEvent(eventType: BulletinItem.ItemType, baseItem : BulletinItem, index : Int) : Boolean
+        fun formDidTriggerEvent(eventType: BulletinItem.EventType, baseItem : BulletinItem, index : Int) : Boolean
     }
     // endregion
 }

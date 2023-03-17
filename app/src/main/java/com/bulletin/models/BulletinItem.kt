@@ -15,6 +15,10 @@ abstract class BulletinItem()  {
         ACTION_BUTTON("actionButton"),
     }
 
+    enum class EventType(val value: String) {
+        TRIGGER_ACTION("triggerAppAction"),
+    }
+
     // MARK: - Variables
      var type: ItemType = ItemType.UNDEFINED
 

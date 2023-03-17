@@ -1,11 +1,14 @@
 package com.bulletin.viewHolder
 
+import android.content.res.ColorStateList
 import android.os.Build
 import android.view.View
 import com.bulletin.FormRecyclerViewAdapter
 import com.bulletin.models.ActionButton
+import com.bulletin.models.BulletinItem
 import com.bulletin.utilities.DeviceUtil
 import com.bulletin.utilities.ThemeUtils
+import com.bulletin.utilities.ViewUtil
 import com.example.bulletin.R
 import com.example.bulletin.databinding.LayoutFormSectionActionButtonBinding
 
@@ -26,6 +29,12 @@ class FormSectionActionButtonViewHolder(val viewBinding : LayoutFormSectionActio
             viewBinding.actionButton.setVisibility(View.GONE)
         }
 
+        viewBinding.actionButton.setOnClickListener {
+            _listener?.formDidTriggerEvent(BulletinItem.EventType.TRIGGER_ACTION, item, adapterPosition)
+        }
+
+       ViewUtil.addBounceEffect(viewBinding.actionButton)
+
     }
 
     override fun getBackgroundView(): View? {
@@ -39,12 +48,15 @@ class FormSectionActionButtonViewHolder(val viewBinding : LayoutFormSectionActio
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             viewBinding.actionButton.setTextAppearance(R.style.base_semi_bold)
         } else {
-            viewBinding.actionButton.setTextAppearance(viewBinding.actionButton.context, R.style.large_bold)
+            viewBinding.actionButton.setTextAppearance(viewBinding.actionButton.context, R.style.base_semi_bold)
         }
         viewBinding.actionButton.setTextColor(ThemeUtils.getAttributedColor(R.attr.brand_text_primary, viewBinding.actionButton.context))
         viewBinding.actionButton.setBackgroundColor(ThemeUtils.getAttributedColor(R.attr.main_bg_surface_alt, viewBinding.actionButton.context))
-        ThemeUtils.applyThemeBorder(viewBinding.actionButton,R.attr.main_bg_surface_alt,
-            DeviceUtil.convertDpToPixel(viewBinding.actionButton.context, 1f))
+      //  ThemeUtils.applyThemeBorder(viewBinding.actionButton,R.attr.brand_bg_primary,
+//            DeviceUtil.convertDpToPixel(viewBinding.actionButton.context, 3f))
+
+        viewBinding.actionButton.strokeWidth = DeviceUtil.convertDpToPixel(viewBinding.actionButton.context, 1f)
+        viewBinding.actionButton.setStrokeColor(ColorStateList.valueOf(ThemeUtils.getAttributedColor(R.attr.brand_bg_primary, viewBinding.actionButton.context)))
 
     }
     // endregion

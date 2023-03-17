@@ -2,6 +2,7 @@ package com.example.bulletin
 
 import android.os.Build
 import android.os.Bundle
+import android.util.Size
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bulletin.BulletinSdk
@@ -10,6 +11,7 @@ import com.bulletin.models.*
 import com.bulletin.utilities.ThemeUtils
 import com.bulletin.utilities.ViewUtil
 import com.example.bulletin.databinding.ActivityMainBinding
+import com.wrx.wazirx.views.bulletin.model.Media
 
 class MainActivity : AppCompatActivity(), FormRecyclerViewAdapter.OnItemClickListener {
 
@@ -52,9 +54,6 @@ class MainActivity : AppCompatActivity(), FormRecyclerViewAdapter.OnItemClickLis
 
         ThemeUtils.applyThemeDrawable(binding.headerView, R.attr.main_navigation_bg)
 
-//        viewBinding.emojiButton.strokeWidth = 2
-//        viewBinding.emojiButton.setStrokeColor(ColorStateList.valueOf(ThemeUtils.getAttributedColor(R.attr.cell_separator_1, viewBinding.emojiButton.context)))
-
     }
 
     fun recyclerViewSetUp(){
@@ -91,17 +90,27 @@ class MainActivity : AppCompatActivity(), FormRecyclerViewAdapter.OnItemClickLis
         val items = BulletinSdk().showUnseenBulletin(4)
 
 
-        val title = Title("Version " + "1.21","In this update","loreum ipsum loreum ipsum loreum ipsum")
+        val title = Title("Version " + "1.21","In this update","loreum ipsum loreum ipsum loreum ipsum loreum ipsum loreum ipsum")
 
-        val message = Message(Message.MessageType.TEXT,"Vestibulum id ligula porta felis euismod semper.")
+        val message = Message(Message.MessageType.HTML,"<header>\n" +
+                "  <h1>Harry Potter's House</h1>\n" +
+                "  <p class=\"address\">\n" +
+                "Privet Drive, 4<br>Little Whinging<br>Surrey<br>England<br>Great Britain\n" +
+                "  </p>\n" +
+                "</header>")
 
-        val bullet = Bullet(Bullet.BulletType.UNICODE,"U+0031",null)
+        val size = Size(700,500)
+        val media = Media(Media.MediaType.IMAGE,"https://media.istockphoto.com/id/517188688/photo/mountain-landscape.jpg?s=612x612&w=0&k=20&c=A63koPKaCyIwQWOTFBRWXj_PwCrR4cEoOw2S9Q7yVl8=",size)
+
+        val bullet = Bullet(Bullet.BulletType.UNICODE,"\uD83D\uDE01",null) //"\u00F6" //"&#9995"
 
         val bulletPoint = BulletPoint(bullet,"Vestibulum","Etiam porta sem malesuada magna mollis euismod.")
 
         val bulletPoint2 = BulletPoint(bullet,"Justo Condimentum","Sed posuere consectetur est at lobortis. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.")
 
-        return arrayListOf(title, message, bulletPoint, bulletPoint2)
+        val actionButton = ActionButton("Take me to Crypto Gifts",null)
+
+        return arrayListOf(title, message, media, bulletPoint, bulletPoint2, actionButton)
 
     }
 
@@ -113,10 +122,12 @@ class MainActivity : AppCompatActivity(), FormRecyclerViewAdapter.OnItemClickLis
     }
 
     override fun formDidTriggerEvent(
-        eventType: BulletinItem.ItemType,
+        eventType: BulletinItem.EventType,
         baseItem: BulletinItem,
         index: Int
     ): Boolean {
         return true
     }
+
+
 }

@@ -1,7 +1,9 @@
 package com.bulletin.viewHolder
 
 import android.os.Build
+import android.text.Html
 import android.view.View
+import androidx.core.text.HtmlCompat
 import com.bulletin.FormRecyclerViewAdapter
 import com.bulletin.models.Message
 import com.bulletin.utilities.ThemeUtils
@@ -17,11 +19,13 @@ class FormSectionMessageViewHolder(val viewBinding : LayoutFormSectionMessageBin
 
         super.bind(item)
 
+
         when(item.messageType) {
             Message.MessageType.HTML -> {
                 // Set Subttitle
                 if (!item.text.isNullOrBlank()) {
-                    viewBinding.messageLabel.text = item.text
+                    val fromHtml = HtmlCompat.fromHtml(item.text, HtmlCompat.FROM_HTML_MODE_COMPACT)
+                    viewBinding.messageLabel.text = fromHtml
                     viewBinding.messageLabel.setVisibility(View.VISIBLE)
                 } else {
                     viewBinding.messageLabel.text = ""
@@ -55,12 +59,12 @@ class FormSectionMessageViewHolder(val viewBinding : LayoutFormSectionMessageBin
 
         // Set Default Properties
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            viewBinding.messageLabel.setTextAppearance(R.style.base_semi_bold)
+            viewBinding.messageLabel.setTextAppearance(R.style.base_regular)
         } else {
-            viewBinding.messageLabel.setTextAppearance(viewBinding.messageLabel.context, R.style.large_bold)
+            viewBinding.messageLabel.setTextAppearance(viewBinding.messageLabel.context, R.style.base_regular)
         }
 
-        viewBinding.messageLabel.setTextColor(ThemeUtils.getAttributedColor(R.attr.brand_text_primary, viewBinding.messageLabel.context))
+        viewBinding.messageLabel.setTextColor(ThemeUtils.getAttributedColor(R.attr.main_text_primary, viewBinding.messageLabel.context))
     }
     // endregion
 

@@ -6,20 +6,22 @@
 
     <ImageView
         android:id="@+id/banner_image_view"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="16dp"
         android:layout_marginRight="20dp"
         android:scaleType="centerInside"
-        app:layout_constraintBottom_toBottomOf="@id/horiz_guideline_35"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/horiz_guideline_35"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.35" />
+<!--    <androidx.constraintlayout.widget.Guideline-->
+<!--        android:id="@+id/horiz_guideline_35"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal"-->
+<!--        app:layout_constraintGuide_percent="0.35" />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
