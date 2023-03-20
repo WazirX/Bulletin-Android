@@ -9,7 +9,6 @@ data class BulletinVersion(val versionNumber: String, val items: MutableList<Bul
             Comparator { t2: BulletinVersion, t1: BulletinVersion ->
                 VersionUtil.versionCompare(t1.versionNumber, t2.versionNumber)
             }
-
     }
 
 }

@@ -32,8 +32,6 @@ class FormSectionMediaViewHolder(val viewBinding : LayoutFormSectionMediaBinding
               // DeviceUtil.convertPixelsToDp(viewBinding.bannerImageView.context,it.height.toFloat()).toInt()
         }
 
-        viewBinding.bannerImageView.setBackgroundColor(ThemeUtils.getAttributedColor(R.attr.main_brand_primary, viewBinding.bannerImageView.context))
-
         (item.url)?.let {
 
             viewBinding.bannerImageView.loadImageWithUrl(

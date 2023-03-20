@@ -53,6 +53,7 @@ class MainActivity : AppCompatActivity(), FormRecyclerViewAdapter.OnItemClickLis
         binding.goItButton.setBackgroundColor(ThemeUtils.getAttributedColor(R.attr.brand_bg_primary, binding.goItButton.context))
 
         ThemeUtils.applyThemeDrawable(binding.headerView, R.attr.main_navigation_bg)
+        ThemeUtils.applyThemeDrawable(binding.mainBackgroundView, R.attr.main_bg_surface_alt)
 
     }
 
@@ -99,18 +100,18 @@ class MainActivity : AppCompatActivity(), FormRecyclerViewAdapter.OnItemClickLis
                 "  </p>\n" +
                 "</header>")
 
-        val size = Size(700,500)
-        val media = Media(Media.MediaType.IMAGE,"https://media.istockphoto.com/id/517188688/photo/mountain-landscape.jpg?s=612x612&w=0&k=20&c=A63koPKaCyIwQWOTFBRWXj_PwCrR4cEoOw2S9Q7yVl8=",size)
+//        val size = Size(700,500)
+//        val media = Media(Media.MediaType.IMAGE,"https://media.istockphoto.com/id/517188688/photo/mountain-landscape.jpg?s=612x612&w=0&k=20&c=A63koPKaCyIwQWOTFBRWXj_PwCrR4cEoOw2S9Q7yVl8=",null)
+//
+//        val bullet = Bullet(Bullet.BulletType.UNICODE,"\uD83D\uDE01",null) //"\u00F6" //"&#9995"
+//
+//        val bulletPoint = BulletPoint(bullet,"Vestibulum","Etiam porta sem malesuada magna mollis euismod.")
+//
+//        val bulletPoint2 = BulletPoint(bullet,"Justo Condimentum","Sed posuere consectetur est at lobortis. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.")
+//
+//        val actionButton = ActionButton("Take me to Crypto Gifts",null)
 
-        val bullet = Bullet(Bullet.BulletType.UNICODE,"\uD83D\uDE01",null) //"\u00F6" //"&#9995"
-
-        val bulletPoint = BulletPoint(bullet,"Vestibulum","Etiam porta sem malesuada magna mollis euismod.")
-
-        val bulletPoint2 = BulletPoint(bullet,"Justo Condimentum","Sed posuere consectetur est at lobortis. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.")
-
-        val actionButton = ActionButton("Take me to Crypto Gifts",null)
-
-        return arrayListOf(title, message, media, bulletPoint, bulletPoint2, actionButton)
+        return arrayListOf(title, message) // media, bulletPoint, bulletPoint2, actionButton
 
     }
 

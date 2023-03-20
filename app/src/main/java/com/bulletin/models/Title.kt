@@ -32,7 +32,7 @@ data class Title(val preTitleText: String?, val titleText: String?, val subTitle
 }
 
 
-//class Title() : BulletinItem() {
+//class Title1() : BulletinItem() {
 //
 //    var preTitleText: String? = null
 //    var titleText: String? = null

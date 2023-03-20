@@ -7,14 +7,7 @@ import com.bulletin.utilities.RuntimeTypeAdapterFactory
 import com.google.gson.annotations.SerializedName
 
 
-open class Media(var mediaType: MediaType = MediaType.IMAGE, val url: String?, val size: Size?) : BulletinItem() {
-
-//    @SerializedName("imageType")
-//    lateinit var imageType: String
-//    @SerializedName("size")
-//    var size: Int = 0
-//    @SerializedName("url")
-//    lateinit var url: String
+data class Media(var mediaType: MediaType = MediaType.IMAGE, val url: String?, val size: Size?) : BulletinItem() {
 
     // region Init Methods
     init {
@@ -60,7 +53,3 @@ open class Media(var mediaType: MediaType = MediaType.IMAGE, val url: String?, v
             }
     }
 }
-
-//class ImageMedia(val versionNumber :String) : Media() {
-//
-//}

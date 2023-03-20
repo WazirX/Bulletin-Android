@@ -2,11 +2,6 @@ package com.bulletin.models
 
 import com.bulletin.extension.validVersion
 
-//data class Version(val versionNumber: String) {
-//     lateinit var version :String
-//
-//}
-
 data class Version(val version: String) {
 
      companion object {

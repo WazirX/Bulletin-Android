@@ -1,18 +1,5 @@
 package com.bulletin.models
 
-import com.google.gson.annotations.SerializedName
-
-//data class BulletPoint(var bulletType: BulletType) : BulletinItem() {
-//    enum class BulletType {
-//        UNICODE,
-//        IMAGE;
-//    }
-//    @SerializedName("title")
-//    var title: String? = null;
-//    @SerializedName("subtitle")
-//    var subtitle: String? = null
-//}
-
 data class BulletPoint(var bullet: Bullet?, var titleText: String?, var subTitleText: String?) : BulletinItem() {
 
     // region Init Methods
@@ -88,6 +75,5 @@ data class Bullet(val bulletType: BulletType?, val unicode: String?, val imageUr
 
         }
     }
-
 
 }

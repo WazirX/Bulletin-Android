@@ -28,7 +28,6 @@ abstract class BulletinItem()  {
                 val mediaRuntimeTypeAdapterFactory = RuntimeTypeAdapterFactory.of(
                     BulletinItem::class.java, "type"
                 )
-                mediaRuntimeTypeAdapterFactory.registerSubtype(PreTitle::class.java, "preTitle")
                 mediaRuntimeTypeAdapterFactory.registerSubtype(Title::class.java, "title")
                 mediaRuntimeTypeAdapterFactory.registerSubtype(Message::class.java, "message")
                 mediaRuntimeTypeAdapterFactory.registerSubtype(Media::class.java, "media")
