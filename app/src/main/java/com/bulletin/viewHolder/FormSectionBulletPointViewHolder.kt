@@ -56,6 +56,7 @@ class FormSectionBulletPointViewHolder(val viewBinding : LayoutFormBulletPointBi
                             ) {
                                 val bitmap = (resource as BitmapDrawable).bitmap
                                 viewBinding.bulletImageView.setImageBitmap(bitmap)
+                                viewBinding.bulletLabel.setVisibility(View.GONE)
                                 viewBinding.bulletImageView.setVisibility(View.VISIBLE)
                             }
 
@@ -70,8 +71,7 @@ class FormSectionBulletPointViewHolder(val viewBinding : LayoutFormBulletPointBi
                 }
             }
             else -> {
-                viewBinding.bulletLabel.text = ""
-                viewBinding.bulletLabel.setVisibility(View.GONE)
+
             }
         }
 

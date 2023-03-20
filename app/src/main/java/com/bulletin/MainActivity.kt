@@ -101,9 +101,9 @@ class MainActivity : AppCompatActivity(), FormRecyclerViewAdapter.OnItemClickLis
                 "</header>")
 
 //        val size = Size(700,500)
-//        val media = Media(Media.MediaType.IMAGE,"https://media.istockphoto.com/id/517188688/photo/mountain-landscape.jpg?s=612x612&w=0&k=20&c=A63koPKaCyIwQWOTFBRWXj_PwCrR4cEoOw2S9Q7yVl8=",null)
+//        val media = Media(Media.MediaType.IMAGE,"https://media.wazirx.com/test_resources/crypto_gifts.png",null)
 //
-//        val bullet = Bullet(Bullet.BulletType.UNICODE,"\uD83D\uDE01",null) //"\u00F6" //"&#9995"
+//        val bullet = Bullet(Bullet.BulletType.IMAGE,"\uD83D\uDE01","https://s3.amazonaws.com/p.hellopye.com/app_assets/dashboard_deposit/3x.png") //"\u00F6" //"&#9995"
 //
 //        val bulletPoint = BulletPoint(bullet,"Vestibulum","Etiam porta sem malesuada magna mollis euismod.")
 //

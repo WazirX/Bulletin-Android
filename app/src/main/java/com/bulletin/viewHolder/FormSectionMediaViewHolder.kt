@@ -25,10 +25,13 @@ class FormSectionMediaViewHolder(val viewBinding : LayoutFormSectionMediaBinding
         // Set Image
         viewBinding.bannerImageView.setVisibility(View.GONE)
 
+       // viewBinding.bannerImageView.setBackgroundColor(ThemeUtils.getAttributedColor(R.attr.brand_bg_primary, viewBinding.bannerImageView.context))
+
+
         item.size?.let {
-            viewBinding.bannerImageView.layoutParams.width = it.width
+           // viewBinding.bannerImageView.layoutParams.width = it.width
                // DeviceUtil.convertPixelsToDp(viewBinding.bannerImageView.context,it.width.toFloat()).toInt()
-            viewBinding.bannerImageView.layoutParams.height = it.height
+           // viewBinding.bannerImageView.layoutParams.height = it.height
               // DeviceUtil.convertPixelsToDp(viewBinding.bannerImageView.context,it.height.toFloat()).toInt()
         }
 
