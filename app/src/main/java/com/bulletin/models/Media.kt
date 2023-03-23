@@ -25,7 +25,7 @@ data class Media(var mediaType: MediaType = MediaType.IMAGE, val url: String?, v
                 val mediaRuntimeTypeAdapterFactory = RuntimeTypeAdapterFactory.of(
                     Media::class.java, "type"
                 )
-               // mediaRuntimeTypeAdapterFactory.registerSubtype(ImageMedia::class.java, "Image")
+                mediaRuntimeTypeAdapterFactory.registerSubtype(Media::class.java, "Image")
                 return mediaRuntimeTypeAdapterFactory
             }
 

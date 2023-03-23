@@ -1,10 +1,12 @@
 package com.example.bulletin
 
+import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.util.Size
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.bulletin.Appearance
 import com.bulletin.BulletinSdk
 import com.bulletin.FormRecyclerViewAdapter
 import com.bulletin.models.*
@@ -18,14 +20,26 @@ class MainActivity : AppCompatActivity(), FormRecyclerViewAdapter.OnItemClickLis
     // region Variables
     private lateinit var binding: ActivityMainBinding
     private lateinit var formRecyclerViewAdapter: FormRecyclerViewAdapter
+    private var bulletinInfo: ArrayList<BulletinItem> = ArrayList()
     // endregion
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
+
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         binding.listView.setBackgroundColor(ThemeUtils.getAttributedColor(R.attr.main_bg_surface_alt, binding.listView.context))
+
+        (intent.extras?.getSerializable("ABC") as? ArrayList<BulletinInfo>)?.let {
+            for (dict in it) {
+                for (bulletinfo in dict.items) {
+                    bulletinInfo.add(bulletinfo)
+                }
+            }
+
+        }
 
         loadDisplayContent()
         updateAppearance()
@@ -63,7 +77,6 @@ class MainActivity : AppCompatActivity(), FormRecyclerViewAdapter.OnItemClickLis
         binding.listView.setLayoutManager(layoutManager)
 
         formRecyclerViewAdapter = FormRecyclerViewAdapter(setUpItems(),this)
-//        formRecyclerViewAdapter.setListener(this)
         binding.listView.setAdapter(formRecyclerViewAdapter)
     }
 
@@ -88,7 +101,7 @@ class MainActivity : AppCompatActivity(), FormRecyclerViewAdapter.OnItemClickLis
 //        BulletinDataStore.registerVersionInfo("1.1", bulletinItemListTwo)
 //        BulletinDataStore.registerVersionInfo("1.2", bulletinItemListTwo)
 //
-        val items = BulletinSdk().showUnseenBulletin(4)
+//        val items = BulletinSdk().showUnseenBulletin(4)
 
 
         val title = Title("Version " + "1.21","In this update","loreum ipsum loreum ipsum loreum ipsum loreum ipsum loreum ipsum")
@@ -100,16 +113,16 @@ class MainActivity : AppCompatActivity(), FormRecyclerViewAdapter.OnItemClickLis
                 "  </p>\n" +
                 "</header>")
 
-//        val size = Size(700,500)
-//        val media = Media(Media.MediaType.IMAGE,"https://media.wazirx.com/test_resources/crypto_gifts.png",null)
-//
-//        val bullet = Bullet(Bullet.BulletType.IMAGE,"\uD83D\uDE01","https://s3.amazonaws.com/p.hellopye.com/app_assets/dashboard_deposit/3x.png") //"\u00F6" //"&#9995"
-//
-//        val bulletPoint = BulletPoint(bullet,"Vestibulum","Etiam porta sem malesuada magna mollis euismod.")
-//
-//        val bulletPoint2 = BulletPoint(bullet,"Justo Condimentum","Sed posuere consectetur est at lobortis. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.")
-//
-//        val actionButton = ActionButton("Take me to Crypto Gifts",null)
+        val size = Size(700,500)
+        val media = Media(Media.MediaType.IMAGE,"https://media.wazirx.com/test_resources/crypto_gifts.png",null)
+
+        val bullet = Bullet(Bullet.BulletType.IMAGE,"\uD83D\uDE01","https://s3.amazonaws.com/p.hellopye.com/app_assets/dashboard_deposit/3x.png") //"\u00F6" //"&#9995"
+
+        val bulletPoint = BulletPoint(bullet,"Vestibulum","Etiam porta sem malesuada magna mollis euismod.")
+
+        val bulletPoint2 = BulletPoint(bullet,"Justo Condimentum","Sed posuere consectetur est at lobortis. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.")
+
+        val actionButton = ActionButton("Take me to Crypto Gifts",null)
 
         return arrayListOf(title, message) // media, bulletPoint, bulletPoint2, actionButton
 

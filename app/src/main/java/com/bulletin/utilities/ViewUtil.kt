@@ -16,16 +16,6 @@ import android.widget.TextView
 
 
 object ViewUtil {
-    @SuppressLint("ClickableViewAccessibility")
-    fun addBounceEffectListener(view: View, touchListener: TouchListener) {
-        view.setOnTouchListener { v: View, event: MotionEvent ->
-            onButtonTouchListener(
-                v,
-                event,
-                touchListener
-            )
-        }
-    }
 
     @SuppressLint("ClickableViewAccessibility")
     fun addBounceEffect(view: View) {

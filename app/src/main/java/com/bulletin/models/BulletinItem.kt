@@ -2,8 +2,9 @@ package com.bulletin.models
 
 import com.bulletin.utilities.RuntimeTypeAdapterFactory
 import com.wrx.wazirx.views.bulletin.model.Media
+import java.io.Serializable
 
-abstract class BulletinItem()  {
+abstract class BulletinItem() : Serializable {
 
     // MARK: - Declarations
     enum class ItemType(val value: String) {
@@ -41,6 +42,26 @@ abstract class BulletinItem()  {
                 )
                 return mediaRuntimeTypeAdapterFactory
             }
+
+        // It Will Return Action Card Creatd With Proper Classes
+        fun createBulletinItem(attributes: Map<String, Any>?): BulletinItem?    {
+
+            // Validation
+            val attributes = attributes  ?: return null
+
+            // Validations
+            val typeString = attributes["type"] as? String ?: return null
+            val itemType = ItemType.valueOf(typeString) ?: return null
+            if (itemType != ItemType.UNDEFINED) {
+                return null
+            }
+
+            // Get Bulletin Item
+//            itemType.classFromString() as? BulletinItem.ItemType {
+//                return bulletinItem.init(attributes: attributes)
+//            }
+            return null
+        }
 
     }
 
