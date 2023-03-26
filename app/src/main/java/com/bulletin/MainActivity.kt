@@ -143,5 +143,4 @@ class MainActivity : AppCompatActivity(), FormRecyclerViewAdapter.OnItemClickLis
         return true
     }
 
-
 }

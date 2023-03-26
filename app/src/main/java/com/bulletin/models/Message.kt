@@ -1,7 +1,8 @@
 package com.bulletin.models
 
 
-data class Message(var messageType: MessageType = MessageType.TEXT, val text: String?) : BulletinItem() {
+data class Message(var messageType: MessageType = MessageType.TEXT, val text: String?) :
+    BulletinItem() {
 
     enum class MessageType(type: String) {
         HTML("html"),

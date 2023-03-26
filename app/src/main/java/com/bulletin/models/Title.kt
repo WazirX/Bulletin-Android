@@ -1,7 +1,8 @@
 package com.bulletin.models
 
 
-data class Title(val preTitleText: String?, val titleText: String?, val subTitleText: String?) : BulletinItem() {
+data class Title(val preTitleText: String?, val titleText: String?, val subTitleText: String?) :
+    BulletinItem() {
 
     // region Init Methods
     init {

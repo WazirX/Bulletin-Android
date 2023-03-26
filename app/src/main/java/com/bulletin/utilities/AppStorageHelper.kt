@@ -7,7 +7,8 @@ import com.bulletin.BulletinApp.Companion.applicationContext
 object AppStorageHelper {
 
     private const val SHARED_PREFS_NAME = "Bulletin_Shared_Prefs"
-    val shared: SharedPreferences = applicationContext.getSharedPreferences(SHARED_PREFS_NAME, Context.MODE_PRIVATE)
+    val shared: SharedPreferences =
+        applicationContext.getSharedPreferences(SHARED_PREFS_NAME, Context.MODE_PRIVATE)
 
     inline fun SharedPreferences.edit(operation: (SharedPreferences.Editor) -> Unit) {
         val edit = edit()

@@ -9,11 +9,14 @@ import com.example.bulletin.R
 import com.example.bulletin.databinding.LayoutFormSectionTitleBinding
 
 
-class FormSectionTitleViewHolder(val viewBinding : LayoutFormSectionTitleBinding, listener : FormRecyclerViewAdapter.OnItemClickListener) :
-    BaseViewHolder<Title>(viewBinding,listener) {
+class FormSectionTitleViewHolder(
+    val viewBinding: LayoutFormSectionTitleBinding,
+    listener: FormRecyclerViewAdapter.OnItemClickListener
+) :
+    BaseViewHolder<Title>(viewBinding, listener) {
 
     // region Methods
-     override fun bind(item: Title) {
+    override fun bind(item: Title) {
         super.bind(item)
 
         itemView.setOnClickListener {
@@ -62,14 +65,38 @@ class FormSectionTitleViewHolder(val viewBinding : LayoutFormSectionTitleBinding
             viewBinding.titleLabel.setTextAppearance(R.style.heading_4_semi_bold)
             viewBinding.subtitleLabel.setTextAppearance(R.style.base_regular)
         } else {
-            viewBinding.preTitleLabel.setTextAppearance(viewBinding.preTitleLabel.context, R.style.small_medium)
-            viewBinding.titleLabel.setTextAppearance(viewBinding.titleLabel.context, R.style.heading_4_semi_bold)
-            viewBinding.subtitleLabel.setTextAppearance(viewBinding.subtitleLabel.context, R.style.base_regular)
+            viewBinding.preTitleLabel.setTextAppearance(
+                viewBinding.preTitleLabel.context,
+                R.style.small_medium
+            )
+            viewBinding.titleLabel.setTextAppearance(
+                viewBinding.titleLabel.context,
+                R.style.heading_4_semi_bold
+            )
+            viewBinding.subtitleLabel.setTextAppearance(
+                viewBinding.subtitleLabel.context,
+                R.style.base_regular
+            )
         }
 
-        viewBinding.preTitleLabel.setTextColor(ThemeUtils.getAttributedColor(R.attr.success_text_primary, viewBinding.preTitleLabel.context))
-        viewBinding.titleLabel.setTextColor(ThemeUtils.getAttributedColor(R.attr.main_text_primary, viewBinding.titleLabel.context))
-        viewBinding.subtitleLabel.setTextColor(ThemeUtils.getAttributedColor(R.attr.main_text_primary, viewBinding.subtitleLabel.context))
+        viewBinding.preTitleLabel.setTextColor(
+            ThemeUtils.getAttributedColor(
+                R.attr.success_text_primary,
+                viewBinding.preTitleLabel.context
+            )
+        )
+        viewBinding.titleLabel.setTextColor(
+            ThemeUtils.getAttributedColor(
+                R.attr.main_text_primary,
+                viewBinding.titleLabel.context
+            )
+        )
+        viewBinding.subtitleLabel.setTextColor(
+            ThemeUtils.getAttributedColor(
+                R.attr.main_text_primary,
+                viewBinding.subtitleLabel.context
+            )
+        )
 
     }
     // endregion

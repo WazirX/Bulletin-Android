@@ -15,24 +15,27 @@ import com.example.bulletin.databinding.LayoutFormSectionMediaBinding
 import com.wrx.wazirx.views.bulletin.model.Media
 
 
-class FormSectionMediaViewHolder(val viewBinding : LayoutFormSectionMediaBinding, listener : FormRecyclerViewAdapter.OnItemClickListener) :
-    BaseViewHolder<Media>(viewBinding,listener) {
+class FormSectionMediaViewHolder(
+    val viewBinding: LayoutFormSectionMediaBinding,
+    listener: FormRecyclerViewAdapter.OnItemClickListener
+) :
+    BaseViewHolder<Media>(viewBinding, listener) {
 
     // region Methods
-     override fun bind(item: Media) {
+    override fun bind(item: Media) {
         super.bind(item)
 
         // Set Image
         viewBinding.bannerImageView.setVisibility(View.GONE)
 
-       // viewBinding.bannerImageView.setBackgroundColor(ThemeUtils.getAttributedColor(R.attr.brand_bg_primary, viewBinding.bannerImageView.context))
+        // viewBinding.bannerImageView.setBackgroundColor(ThemeUtils.getAttributedColor(R.attr.brand_bg_primary, viewBinding.bannerImageView.context))
 
 
         item.size?.let {
-           // viewBinding.bannerImageView.layoutParams.width = it.width
-               // DeviceUtil.convertPixelsToDp(viewBinding.bannerImageView.context,it.width.toFloat()).toInt()
-           // viewBinding.bannerImageView.layoutParams.height = it.height
-              // DeviceUtil.convertPixelsToDp(viewBinding.bannerImageView.context,it.height.toFloat()).toInt()
+            // viewBinding.bannerImageView.layoutParams.width = it.width
+            // DeviceUtil.convertPixelsToDp(viewBinding.bannerImageView.context,it.width.toFloat()).toInt()
+            // viewBinding.bannerImageView.layoutParams.height = it.height
+            // DeviceUtil.convertPixelsToDp(viewBinding.bannerImageView.context,it.height.toFloat()).toInt()
         }
 
         (item.url)?.let {
@@ -55,6 +58,7 @@ class FormSectionMediaViewHolder(val viewBinding : LayoutFormSectionMediaBinding
                     override fun onLoadFailed(errorDrawable: Drawable?) {
                         print("onLoadFailed")
                     }
+
                     override fun onLoadCleared(placeholder: Drawable?) {
                         print("onLoadCleared")
                     }

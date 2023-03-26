@@ -65,7 +65,7 @@ class BulletinDataStore {
     fun registerVersionInfo11(version: Version, items: MutableList<HashMap<String, Any>>) {
 
         val bulletinItems = ArrayList<BulletinItem>()
-        for (itemAttributes in items)  {
+        for (itemAttributes in items) {
             val bulletinItem = BulletinItem.createBulletinItem(itemAttributes) ?: return continue
             bulletinItems.add(bulletinItem)
         }
@@ -101,7 +101,7 @@ class BulletinDataStore {
             return bulletinInfo
         } else if (fromNewVersion == null && toOldVersion == null && limit != null) {
             bulletinInfo.addAll(data.take(limit))
-            return  bulletinInfo
+            return bulletinInfo
         }
 
         val sortedList = data.sortedWith(compareBy({
@@ -110,10 +110,19 @@ class BulletinDataStore {
 
         for (indice in sortedList.indices) {
 
-            if (indice == 0) AppStorageHelper.shared.lastSeenVersion = Version.init(sortedList[indice].version.version)
-            if (VersionUtil.versionCompare(fromNewVersion?.version, sortedList[indice].version.version) >= 0) {
+            if (indice == 0) AppStorageHelper.shared.lastSeenVersion =
+                Version.init(sortedList[indice].version.version)
+            if (VersionUtil.versionCompare(
+                    fromNewVersion?.version,
+                    sortedList[indice].version.version
+                ) >= 0
+            ) {
                 bulletinInfo.add(sortedList[indice])
-            } else if (VersionUtil.versionCompare(toOldVersion?.version, sortedList[indice].version.version) < 0) {
+            } else if (VersionUtil.versionCompare(
+                    toOldVersion?.version,
+                    sortedList[indice].version.version
+                ) < 0
+            ) {
                 bulletinInfo.add(sortedList[indice])
             }
 

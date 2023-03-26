@@ -13,11 +13,14 @@ import com.example.bulletin.R
 import com.example.bulletin.databinding.LayoutFormSectionActionButtonBinding
 
 
-class FormSectionActionButtonViewHolder(val viewBinding : LayoutFormSectionActionButtonBinding, listener : FormRecyclerViewAdapter.OnItemClickListener) :
-    BaseViewHolder<ActionButton>(viewBinding,listener) {
+class FormSectionActionButtonViewHolder(
+    val viewBinding: LayoutFormSectionActionButtonBinding,
+    listener: FormRecyclerViewAdapter.OnItemClickListener
+) :
+    BaseViewHolder<ActionButton>(viewBinding, listener) {
 
     // region Methods
-     override fun bind(item: ActionButton) {
+    override fun bind(item: ActionButton) {
         super.bind(item)
 
         // Set Title
@@ -30,10 +33,14 @@ class FormSectionActionButtonViewHolder(val viewBinding : LayoutFormSectionActio
         }
 
         viewBinding.actionButton.setOnClickListener {
-            _listener?.formDidTriggerEvent(BulletinItem.EventType.TRIGGER_ACTION, item, adapterPosition)
+            _listener?.formDidTriggerEvent(
+                BulletinItem.EventType.TRIGGER_ACTION,
+                item,
+                adapterPosition
+            )
         }
 
-       ViewUtil.addBounceEffect(viewBinding.actionButton)
+        ViewUtil.addBounceEffect(viewBinding.actionButton)
 
     }
 
@@ -48,15 +55,36 @@ class FormSectionActionButtonViewHolder(val viewBinding : LayoutFormSectionActio
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             viewBinding.actionButton.setTextAppearance(R.style.base_semi_bold)
         } else {
-            viewBinding.actionButton.setTextAppearance(viewBinding.actionButton.context, R.style.base_semi_bold)
+            viewBinding.actionButton.setTextAppearance(
+                viewBinding.actionButton.context,
+                R.style.base_semi_bold
+            )
         }
-        viewBinding.actionButton.setTextColor(ThemeUtils.getAttributedColor(R.attr.brand_text_primary, viewBinding.actionButton.context))
-        viewBinding.actionButton.setBackgroundColor(ThemeUtils.getAttributedColor(R.attr.main_bg_surface_alt, viewBinding.actionButton.context))
-      //  ThemeUtils.applyThemeBorder(viewBinding.actionButton,R.attr.brand_bg_primary,
+        viewBinding.actionButton.setTextColor(
+            ThemeUtils.getAttributedColor(
+                R.attr.brand_text_primary,
+                viewBinding.actionButton.context
+            )
+        )
+        viewBinding.actionButton.setBackgroundColor(
+            ThemeUtils.getAttributedColor(
+                R.attr.main_bg_surface_alt,
+                viewBinding.actionButton.context
+            )
+        )
+        //  ThemeUtils.applyThemeBorder(viewBinding.actionButton,R.attr.brand_bg_primary,
 //            DeviceUtil.convertDpToPixel(viewBinding.actionButton.context, 3f))
 
-        viewBinding.actionButton.strokeWidth = DeviceUtil.convertDpToPixel(viewBinding.actionButton.context, 1f)
-        viewBinding.actionButton.setStrokeColor(ColorStateList.valueOf(ThemeUtils.getAttributedColor(R.attr.brand_bg_primary, viewBinding.actionButton.context)))
+        viewBinding.actionButton.strokeWidth =
+            DeviceUtil.convertDpToPixel(viewBinding.actionButton.context, 1f)
+        viewBinding.actionButton.setStrokeColor(
+            ColorStateList.valueOf(
+                ThemeUtils.getAttributedColor(
+                    R.attr.brand_bg_primary,
+                    viewBinding.actionButton.context
+                )
+            )
+        )
 
     }
     // endregion

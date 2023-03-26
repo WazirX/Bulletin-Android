@@ -21,7 +21,7 @@ abstract class BulletinItem() : Serializable {
     }
 
     // MARK: - Variables
-     var type: ItemType = ItemType.UNDEFINED
+    var type: ItemType = ItemType.UNDEFINED
 
     companion object {
         val runtimeTypeAdapterFactory: RuntimeTypeAdapterFactory<*>
@@ -44,10 +44,10 @@ abstract class BulletinItem() : Serializable {
             }
 
         // It Will Return Action Card Creatd With Proper Classes
-        fun createBulletinItem(attributes: Map<String, Any>?): BulletinItem?    {
+        fun createBulletinItem(attributes: Map<String, Any>?): BulletinItem? {
 
             // Validation
-            val attributes = attributes  ?: return null
+            val attributes = attributes ?: return null
 
             // Validations
             val typeString = attributes["type"] as? String ?: return null
@@ -66,4 +66,4 @@ abstract class BulletinItem() : Serializable {
     }
 
     //endregion
-    }
+}

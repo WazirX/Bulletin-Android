@@ -11,16 +11,19 @@ import com.example.bulletin.R
 import com.example.bulletin.databinding.LayoutFormSectionMessageBinding
 
 
-class FormSectionMessageViewHolder(val viewBinding : LayoutFormSectionMessageBinding, listener : FormRecyclerViewAdapter.OnItemClickListener) :
-    BaseViewHolder<Message>(viewBinding,listener) {
+class FormSectionMessageViewHolder(
+    val viewBinding: LayoutFormSectionMessageBinding,
+    listener: FormRecyclerViewAdapter.OnItemClickListener
+) :
+    BaseViewHolder<Message>(viewBinding, listener) {
 
     // region Methods
-     override fun bind(item: Message) {
+    override fun bind(item: Message) {
 
         super.bind(item)
 
 
-        when(item.messageType) {
+        when (item.messageType) {
             Message.MessageType.HTML -> {
                 // Set Subttitle
                 if (!item.text.isNullOrBlank()) {
@@ -61,10 +64,18 @@ class FormSectionMessageViewHolder(val viewBinding : LayoutFormSectionMessageBin
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             viewBinding.messageLabel.setTextAppearance(R.style.base_regular)
         } else {
-            viewBinding.messageLabel.setTextAppearance(viewBinding.messageLabel.context, R.style.base_regular)
+            viewBinding.messageLabel.setTextAppearance(
+                viewBinding.messageLabel.context,
+                R.style.base_regular
+            )
         }
 
-        viewBinding.messageLabel.setTextColor(ThemeUtils.getAttributedColor(R.attr.main_text_primary, viewBinding.messageLabel.context))
+        viewBinding.messageLabel.setTextColor(
+            ThemeUtils.getAttributedColor(
+                R.attr.main_text_primary,
+                viewBinding.messageLabel.context
+            )
+        )
     }
     // endregion
 

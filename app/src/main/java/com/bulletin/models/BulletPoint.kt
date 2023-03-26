@@ -1,6 +1,7 @@
 package com.bulletin.models
 
-data class BulletPoint(var bullet: Bullet?, var titleText: String?, var subTitleText: String?) : BulletinItem() {
+data class BulletPoint(var bullet: Bullet?, var titleText: String?, var subTitleText: String?) :
+    BulletinItem() {
 
     // region Init Methods
     init {
@@ -28,7 +29,8 @@ data class BulletPoint(var bullet: Bullet?, var titleText: String?, var subTitle
     }
 }
 
-data class Bullet(val bulletType: BulletType?, val unicode: String?, val imageUrl: String?) : BulletinItem() {
+data class Bullet(val bulletType: BulletType?, val unicode: String?, val imageUrl: String?) :
+    BulletinItem() {
 
     enum class BulletType {
         UNICODE,
@@ -54,22 +56,22 @@ data class Bullet(val bulletType: BulletType?, val unicode: String?, val imageUr
             var visualSymbol = ""
             var imageUrlString = ""
 
-           when(bulletType) {
-               BulletType.UNICODE -> {
+            when (bulletType) {
+                BulletType.UNICODE -> {
 
-                   // Set Unicode
+                    // Set Unicode
                     visualSymbol = attributes["unicode"] as? String ?: return null
-               }
-               BulletType.IMAGE -> {
+                }
+                BulletType.IMAGE -> {
 
-                   // Set ImageUrl
+                    // Set ImageUrl
                     imageUrlString = attributes["imageUrl"] as? String ?: return null
 
-               }
-               else -> {
+                }
+                else -> {
                     return null
-               }
-           }
+                }
+            }
 
             return Bullet(bulletType, visualSymbol, imageUrlString)
 

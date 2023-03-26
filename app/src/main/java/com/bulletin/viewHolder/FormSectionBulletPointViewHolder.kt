@@ -17,17 +17,20 @@ import com.example.bulletin.R
 import com.example.bulletin.databinding.LayoutFormBulletPointBinding
 
 
-class FormSectionBulletPointViewHolder(val viewBinding : LayoutFormBulletPointBinding, listener : FormRecyclerViewAdapter.OnItemClickListener) :
-    BaseViewHolder<BulletPoint>(viewBinding,listener) {
+class FormSectionBulletPointViewHolder(
+    val viewBinding: LayoutFormBulletPointBinding,
+    listener: FormRecyclerViewAdapter.OnItemClickListener
+) :
+    BaseViewHolder<BulletPoint>(viewBinding, listener) {
 
     // region Methods
-     override fun bind(item: BulletPoint) {
+    override fun bind(item: BulletPoint) {
         super.bind(item)
 
         viewBinding.bulletImageView.setVisibility(View.GONE)
         viewBinding.bulletLabel.setVisibility(View.GONE)
 
-        when(item.bullet?.bulletType) {
+        when (item.bullet?.bulletType) {
             Bullet.BulletType.UNICODE -> {
 
                 val unicode = item.bullet?.unicode
@@ -63,6 +66,7 @@ class FormSectionBulletPointViewHolder(val viewBinding : LayoutFormBulletPointBi
                             override fun onLoadFailed(errorDrawable: Drawable?) {
                                 print("onLoadFailed")
                             }
+
                             override fun onLoadCleared(placeholder: Drawable?) {
                                 print("onLoadCleared")
                             }
@@ -103,12 +107,28 @@ class FormSectionBulletPointViewHolder(val viewBinding : LayoutFormBulletPointBi
             viewBinding.titleLabel.setTextAppearance(R.style.large_semi_bold)
             viewBinding.subtitleLabel.setTextAppearance(R.style.base_regular)
         } else {
-            viewBinding.titleLabel.setTextAppearance(viewBinding.titleLabel.context, R.style.large_semi_bold)
-            viewBinding.subtitleLabel.setTextAppearance(viewBinding.subtitleLabel.context, R.style.base_regular)
+            viewBinding.titleLabel.setTextAppearance(
+                viewBinding.titleLabel.context,
+                R.style.large_semi_bold
+            )
+            viewBinding.subtitleLabel.setTextAppearance(
+                viewBinding.subtitleLabel.context,
+                R.style.base_regular
+            )
         }
 
-        viewBinding.titleLabel.setTextColor(ThemeUtils.getAttributedColor(R.attr.main_text_primary, viewBinding.titleLabel.context))
-        viewBinding.subtitleLabel.setTextColor(ThemeUtils.getAttributedColor(R.attr.main_text_secondary, viewBinding.subtitleLabel.context))
+        viewBinding.titleLabel.setTextColor(
+            ThemeUtils.getAttributedColor(
+                R.attr.main_text_primary,
+                viewBinding.titleLabel.context
+            )
+        )
+        viewBinding.subtitleLabel.setTextColor(
+            ThemeUtils.getAttributedColor(
+                R.attr.main_text_secondary,
+                viewBinding.subtitleLabel.context
+            )
+        )
 
     }
 

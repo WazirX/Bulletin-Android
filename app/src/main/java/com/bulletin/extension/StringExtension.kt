@@ -43,7 +43,7 @@ fun String.toCamelCaseMultipleWords(): String {
     return camelCaseString
 }
 
-private fun toProperCase(s: String): String? {
+private fun toProperCase(s: String): String {
     return s.substring(0, 1).uppercase(Locale.getDefault()) +
             s.substring(1).lowercase(Locale.getDefault())
 }

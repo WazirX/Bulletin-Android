@@ -18,7 +18,7 @@ data class ActionButton(val title: String?, var clickPayload: Any?) : BulletinIt
             // Set Click Payload
             val clickPayload = attributes["clickPayload"]
 
-            return ActionButton(title,clickPayload)
+            return ActionButton(title, clickPayload)
         }
     }
 }

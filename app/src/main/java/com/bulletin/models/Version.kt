@@ -5,15 +5,15 @@ import java.io.Serializable
 
 data class Version(val version: String) : Serializable {
 
-     companion object {
+    companion object {
 
-          fun init(version: String): Version? {
+        fun init(version: String): Version? {
 
-               // Set Title
-               val validVersion = version.validVersion() ?: return null
+            // Set Title
+            val validVersion = version.validVersion() ?: return null
 
-               return Version(validVersion)
-          }
-     }
+            return Version(validVersion)
+        }
+    }
 
 }

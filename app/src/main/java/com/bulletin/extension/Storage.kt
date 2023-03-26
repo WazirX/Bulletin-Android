@@ -5,16 +5,9 @@ import com.bulletin.models.Version
 import com.bulletin.utilities.AppStorageHelper
 import com.bulletin.utilities.AppStorageHelper.edit
 
-class Storage {
-}
-
-fun Any.saveToStorage(key: Any) {
-//    AppStorageHelper.save(key, this)
-}
-
 private const val SHARED_PREFS_PARAMS_LATEST_APP_VERSION = "latest_app_version"
 
-var SharedPreferences.lastSeenVersion : Version?
+var SharedPreferences.lastSeenVersion: Version?
     set(newValue) {
         edit {
             if (newValue == null) {

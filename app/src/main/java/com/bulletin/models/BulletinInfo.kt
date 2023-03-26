@@ -7,7 +7,7 @@ class BulletinInfo(var version: Version, var items: List<BulletinItem>) : Serial
 
     companion object {
         fun init(version: Version, items: MutableList<BulletinItem>): BulletinInfo {
-            return BulletinInfo(version,items)
+            return BulletinInfo(version, items)
         }
 
         var descendingSort: Comparator<BulletinInfo> =
