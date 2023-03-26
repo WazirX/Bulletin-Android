@@ -1,10 +1,9 @@
 package com.bulletin.viewHolder
 
-import android.os.Build
-import android.text.Html
 import android.view.View
 import androidx.core.text.HtmlCompat
 import com.bulletin.FormRecyclerViewAdapter
+import com.bulletin.extension.textAppearence
 import com.bulletin.models.Message
 import com.bulletin.utilities.ThemeUtils
 import com.example.bulletin.R
@@ -61,14 +60,7 @@ class FormSectionMessageViewHolder(
         super.updateAppearance()
 
         // Set Default Properties
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            viewBinding.messageLabel.setTextAppearance(R.style.base_regular)
-        } else {
-            viewBinding.messageLabel.setTextAppearance(
-                viewBinding.messageLabel.context,
-                R.style.base_regular
-            )
-        }
+        viewBinding.messageLabel.textAppearence(R.style.base_regular)
 
         viewBinding.messageLabel.setTextColor(
             ThemeUtils.getAttributedColor(

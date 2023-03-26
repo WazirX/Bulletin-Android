@@ -2,7 +2,6 @@ package com.bulletin.extension
 
 import android.content.SharedPreferences
 import com.bulletin.models.Version
-import com.bulletin.utilities.AppStorageHelper
 import com.bulletin.utilities.AppStorageHelper.edit
 
 private const val SHARED_PREFS_PARAMS_LATEST_APP_VERSION = "latest_app_version"

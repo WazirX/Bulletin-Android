@@ -1,21 +1,19 @@
 package com.example.bulletin
 
-import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.util.Size
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.bulletin.Appearance
-import com.bulletin.BulletinSdk
 import com.bulletin.FormRecyclerViewAdapter
+import com.bulletin.extension.textAppearence
 import com.bulletin.models.*
 import com.bulletin.utilities.ThemeUtils
 import com.bulletin.utilities.ViewUtil
 import com.example.bulletin.databinding.ActivityMainBinding
 import com.wrx.wazirx.views.bulletin.model.Media
 
-class MainActivity : AppCompatActivity(), FormRecyclerViewAdapter.OnItemClickListener {
+class DefaultActivity : AppCompatActivity(), FormRecyclerViewAdapter.OnItemClickListener {
 
     // region Variables
     private lateinit var binding: ActivityMainBinding
@@ -53,13 +51,8 @@ class MainActivity : AppCompatActivity(), FormRecyclerViewAdapter.OnItemClickLis
 
     fun updateAppearance() {
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            binding.headerTitle.setTextAppearance(R.style.large_semi_bold)
-            binding.goItButton.setTextAppearance(R.style.base_bold)
-        } else {
-            binding.headerTitle.setTextAppearance(binding.headerTitle.context,R.style.large_semi_bold)
-            binding.goItButton.setTextAppearance(binding.goItButton.context,R.style.base_bold)
-        }
+        binding.headerTitle.textAppearence(R.style.large_semi_bold)
+        binding.goItButton.textAppearence(R.style.base_bold)
 
         binding.headerTitle.setTextColor(ThemeUtils.getAttributedColor(R.attr.main_navigation_onNavigation, binding.headerTitle.context))
 
@@ -81,28 +74,6 @@ class MainActivity : AppCompatActivity(), FormRecyclerViewAdapter.OnItemClickLis
     }
 
     fun setUpItems() : ArrayList<BulletinItem> {
-//        val bulletinItem = PreTitle("text")
-//        val bulletinItem1 = ActionButton("actionButton","")
-//        val bulletinItem2 = bulletinItem.copy(text = "Hello")
-//        val bulletinItem3 = bulletinItem1.copy(title = "New Action button")
-//        val bulletinItem4 = bulletinItem.copy(text = "Hello boss")
-//        val bulletinItem5 = bulletinItem.copy(text = "Hello boss")
-//        val bulletinItemListTwo: MutableList<BulletinItem> = mutableListOf()
-//
-//        bulletinItemListTwo.add(bulletinItem)
-//        bulletinItemListTwo.add(bulletinItem2)
-//        bulletinItemListTwo.add(bulletinItem3)
-//        bulletinItemListTwo.add(bulletinItem4)
-//        bulletinItemListTwo.add(bulletinItem5)
-//
-//        BulletinDataStore.registerVersionInfo("1.0", bulletinItemListTwo)
-//        BulletinDataStore.registerVersionInfo("1.3", bulletinItemListTwo)
-//        BulletinDataStore.registerVersionInfo("1.4", bulletinItemListTwo)
-//        BulletinDataStore.registerVersionInfo("1.1", bulletinItemListTwo)
-//        BulletinDataStore.registerVersionInfo("1.2", bulletinItemListTwo)
-//
-//        val items = BulletinSdk().showUnseenBulletin(4)
-
 
         val title = Title("Version " + "1.21","In this update","loreum ipsum loreum ipsum loreum ipsum loreum ipsum loreum ipsum")
 

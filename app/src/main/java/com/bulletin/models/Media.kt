@@ -2,9 +2,7 @@ package com.wrx.wazirx.views.bulletin.model
 
 import android.util.Size
 import com.bulletin.models.BulletinItem
-import com.bulletin.models.Message
 import com.bulletin.utilities.RuntimeTypeAdapterFactory
-import com.google.gson.annotations.SerializedName
 
 
 data class Media(var mediaType: MediaType = MediaType.IMAGE, val url: String?, val size: Size?) :

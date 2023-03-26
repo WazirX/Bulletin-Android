@@ -2,15 +2,12 @@ package com.bulletin.viewHolder
 
 import android.graphics.drawable.BitmapDrawable
 import android.graphics.drawable.Drawable
-import android.util.TypedValue
 import android.view.View
 import com.bulletin.FormRecyclerViewAdapter
 import com.bulletin.extension.loadImageWithUrl
 import com.bulletin.utilities.DeviceUtil
-import com.bulletin.utilities.ThemeUtils
 import com.bumptech.glide.request.target.CustomTarget
 import com.bumptech.glide.request.transition.Transition
-import com.example.bulletin.R
 import com.example.bulletin.databinding.LayoutFormSectionMediaBinding
 import com.wrx.wazirx.views.bulletin.model.Media
 
@@ -28,14 +25,9 @@ class FormSectionMediaViewHolder(
         // Set Image
         viewBinding.bannerImageView.setVisibility(View.GONE)
 
-        // viewBinding.bannerImageView.setBackgroundColor(ThemeUtils.getAttributedColor(R.attr.brand_bg_primary, viewBinding.bannerImageView.context))
-
-
         item.size?.let {
-            // viewBinding.bannerImageView.layoutParams.width = it.width
-            // DeviceUtil.convertPixelsToDp(viewBinding.bannerImageView.context,it.width.toFloat()).toInt()
-            // viewBinding.bannerImageView.layoutParams.height = it.height
-            // DeviceUtil.convertPixelsToDp(viewBinding.bannerImageView.context,it.height.toFloat()).toInt()
+             viewBinding.bannerImageView.layoutParams.width = DeviceUtil.convertPixelsToDp(viewBinding.bannerImageView.context,it.width.toFloat()).toInt()
+             viewBinding.bannerImageView.layoutParams.height = DeviceUtil.convertPixelsToDp(viewBinding.bannerImageView.context,it.height.toFloat()).toInt()
         }
 
         (item.url)?.let {

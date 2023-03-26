@@ -3,6 +3,7 @@ package com.bulletin.viewHolder
 import android.os.Build
 import android.view.View
 import com.bulletin.FormRecyclerViewAdapter
+import com.bulletin.extension.textAppearence
 import com.bulletin.models.Title
 import com.bulletin.utilities.ThemeUtils
 import com.example.bulletin.R
@@ -60,24 +61,9 @@ class FormSectionTitleViewHolder(
         super.updateAppearance()
 
         // Set Default Properties
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            viewBinding.preTitleLabel.setTextAppearance(R.style.small_medium)
-            viewBinding.titleLabel.setTextAppearance(R.style.heading_4_semi_bold)
-            viewBinding.subtitleLabel.setTextAppearance(R.style.base_regular)
-        } else {
-            viewBinding.preTitleLabel.setTextAppearance(
-                viewBinding.preTitleLabel.context,
-                R.style.small_medium
-            )
-            viewBinding.titleLabel.setTextAppearance(
-                viewBinding.titleLabel.context,
-                R.style.heading_4_semi_bold
-            )
-            viewBinding.subtitleLabel.setTextAppearance(
-                viewBinding.subtitleLabel.context,
-                R.style.base_regular
-            )
-        }
+        viewBinding.preTitleLabel.textAppearence(R.style.small_medium)
+        viewBinding.titleLabel.textAppearence(R.style.heading_4_semi_bold)
+        viewBinding.subtitleLabel.textAppearence(R.style.base_regular)
 
         viewBinding.preTitleLabel.setTextColor(
             ThemeUtils.getAttributedColor(

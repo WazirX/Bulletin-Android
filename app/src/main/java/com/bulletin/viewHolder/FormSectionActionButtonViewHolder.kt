@@ -1,9 +1,9 @@
 package com.bulletin.viewHolder
 
 import android.content.res.ColorStateList
-import android.os.Build
 import android.view.View
 import com.bulletin.FormRecyclerViewAdapter
+import com.bulletin.extension.textAppearence
 import com.bulletin.models.ActionButton
 import com.bulletin.models.BulletinItem
 import com.bulletin.utilities.DeviceUtil
@@ -51,15 +51,8 @@ class FormSectionActionButtonViewHolder(
     override fun updateAppearance() {
         super.updateAppearance()
 
-        // Set Default Properties
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            viewBinding.actionButton.setTextAppearance(R.style.base_semi_bold)
-        } else {
-            viewBinding.actionButton.setTextAppearance(
-                viewBinding.actionButton.context,
-                R.style.base_semi_bold
-            )
-        }
+        viewBinding.actionButton.textAppearence(R.style.base_semi_bold)
+
         viewBinding.actionButton.setTextColor(
             ThemeUtils.getAttributedColor(
                 R.attr.brand_text_primary,
@@ -72,8 +65,6 @@ class FormSectionActionButtonViewHolder(
                 viewBinding.actionButton.context
             )
         )
-        //  ThemeUtils.applyThemeBorder(viewBinding.actionButton,R.attr.brand_bg_primary,
-//            DeviceUtil.convertDpToPixel(viewBinding.actionButton.context, 3f))
 
         viewBinding.actionButton.strokeWidth =
             DeviceUtil.convertDpToPixel(viewBinding.actionButton.context, 1f)

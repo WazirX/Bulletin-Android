@@ -2,14 +2,13 @@ package com.bulletin.viewHolder
 
 import android.graphics.drawable.BitmapDrawable
 import android.graphics.drawable.Drawable
-import android.os.Build
 import android.view.View
 import androidx.core.text.HtmlCompat
 import com.bulletin.FormRecyclerViewAdapter
 import com.bulletin.extension.loadImageWithUrl
+import com.bulletin.extension.textAppearence
 import com.bulletin.models.Bullet
 import com.bulletin.models.BulletPoint
-import com.bulletin.models.Message
 import com.bulletin.utilities.ThemeUtils
 import com.bumptech.glide.request.target.CustomTarget
 import com.bumptech.glide.request.transition.Transition
@@ -103,19 +102,8 @@ class FormSectionBulletPointViewHolder(
         super.updateAppearance()
 
         // Set Default Properties
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            viewBinding.titleLabel.setTextAppearance(R.style.large_semi_bold)
-            viewBinding.subtitleLabel.setTextAppearance(R.style.base_regular)
-        } else {
-            viewBinding.titleLabel.setTextAppearance(
-                viewBinding.titleLabel.context,
-                R.style.large_semi_bold
-            )
-            viewBinding.subtitleLabel.setTextAppearance(
-                viewBinding.subtitleLabel.context,
-                R.style.base_regular
-            )
-        }
+        viewBinding.titleLabel.textAppearence(R.style.large_semi_bold)
+        viewBinding.subtitleLabel.textAppearence(R.style.base_regular)
 
         viewBinding.titleLabel.setTextColor(
             ThemeUtils.getAttributedColor(
