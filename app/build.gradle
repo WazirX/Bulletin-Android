@@ -1,0 +1,68 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+}
+
+android {
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.bulletin"
+        minSdk 21
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+    kotlinOptions {
+        jvmTarget = 11
+    }
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+
+ext {
+    appCompat='1.4.1'
+    materialDesign='1.6.0'
+    vectorDrawable='1.1.0'
+    multiDex='2.0.1'
+    jUnit='4.13.2'
+    runner='1.4.0'
+    playCore='1.10.3'
+    retrofit='2.9.0'
+    espressoCore='3.4.0'
+}
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation "androidx.appcompat:appcompat:$appCompat"
+    implementation "com.google.android.material:material:$materialDesign"
+    implementation "androidx.vectordrawable:vectordrawable:$vectorDrawable"
+    implementation "androidx.multidex:multidex:$multiDex"
+    implementation fileTree(dir: 'libs', include: ['*.aar', '*.jar'], exclude: [])
+    implementation 'androidx.databinding:viewbinding:7.4.0'
+    testImplementation "junit:junit:$jUnit"
+    androidTestImplementation "androidx.test:runner:$runner"
+    implementation "com.google.android.play:core:$playCore"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$espressoCore"
+
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit"
+
+    implementation 'com.github.bumptech.glide:glide:4.13.2'
+    kapt 'com.github.bumptech.glide:compiler:4.13.2'
+
+}
