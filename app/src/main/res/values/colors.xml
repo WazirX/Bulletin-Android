@@ -10,6 +10,8 @@
 
     <color name="transparent">#00000000</color>
 
+    <color name="colorPrimaryBackground">#18222C</color>
+
     ------------------ New Color ------------------------
     <color name="colors_black">#000000</color>
     <color name="colors_white">#ffffff</color>
